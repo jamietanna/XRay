@@ -136,7 +136,7 @@ class AuthorTest extends PHPUnit_Framework_TestCase {
     $data = json_decode($body);
 	print_r($data);
 
-	$this->assertEquals('http://example.com', $data['data']['like-of'][0]);
+    $this->assertEquals('http://example.com', $data['data']['like-of'][0]);
   }
 
   public function testHEntryHasHCardAuthor() {
