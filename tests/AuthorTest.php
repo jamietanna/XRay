@@ -130,10 +130,13 @@ class AuthorTest extends PHPUnit_Framework_TestCase {
     $url = 'http://author.example.com/h-entry-has-h-card-and-url-author-with-interaction';
     $response = $this->parse(['url' => $url]);
 
+	print_r($response);
     $body = $response->getContent();
     $this->assertEquals(200, $response->getStatusCode());
     $data = json_decode($body);
 	print_r($data);
+
+	$this->assertEquals('http://something', $data);
 
     // $this->assertEquals('http://author.example.com/about', $data->data->author->url);
     // $this->assertEquals('Author', $data->data->author->name);
